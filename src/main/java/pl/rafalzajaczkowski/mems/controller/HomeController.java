@@ -21,6 +21,7 @@ public GifDao gifDao;
         return "home";
     }
 
+
     @GetMapping("/gif/{name}")
     public String gif(@PathVariable String name, ModelMap modelMap){
         modelMap.addAttribute("names",gifDao.findUserNameByGifName(name));
@@ -30,4 +31,5 @@ public GifDao gifDao;
 //    public String hrrome(){
 //        return "gif";
 //    }
+
 }
