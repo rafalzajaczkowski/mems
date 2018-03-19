@@ -34,10 +34,11 @@
     <div class="search-bar container">
         <div class="row">
             <div class="col s12">
-                <form action="#" method="get">
+                <form action="/home/search" method="get">
                     <div class="input-field">
-                        <input name="q" type="search" placeholder="Wyszukiwanie..." required="required" autocomplete="off"/>
-                        <i class="material-icons">search</i>
+                        <input name="name" type="search" placeholder="Wyszukiwanie..." required="required" autocomplete="off"/>
+                        <input class="material-icons" type="submit" value="search">
+
                     </div>
                 </form>
             </div>
@@ -47,7 +48,7 @@
         <div class="row">
            <h1>Miejsce na wyświetlenie gifów:)</h1>
             <tr th:each="gif: ${gifs}">
-            <img class="col s12 l4" th:src="${gif.getGifPath()}"/>
+            <img class="col sl2 l4" th:src="${gif.getGifPath()}"/>
             </tr>
         </div>
     </div>

@@ -4,9 +4,9 @@ public class Gif {
     private Long id;
     private String name;
 
-    public String getGifPath(){
-return  "gifs/" +name;
-     }
+    public String getGifPath() {
+        return "gifs/" + name;
+    }
 
     public Long getId() {
         return id;
