@@ -4,7 +4,7 @@ public class Gif {
     private Long id;
     private String name;
     private Long idCategory;
-
+    private boolean isFavourite;
 
     public String getGifPath(){
 return  "gifs/" +name;
