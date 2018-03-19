@@ -40,12 +40,12 @@ public class GifDaoImp implements GifDao {
 
     public List<Gif> findAll(){
         List<Gif> gifs = new ArrayList<>();
-        gifs.add(new Gif(1L,"android-explosion.gif",1L));
-        gifs.add(new Gif(2L,"ben-and-mike.gif",1L));
-        gifs.add(new Gif(3L,"book-dominos.gif",2L));
-        gifs.add(new Gif(4L,"compiler-bot.gif",2L));
-        gifs.add(new Gif(5L,"cowboy-coder.gif",3L));
-        gifs.add(new Gif(6L,"infinite-andrew.gif",3L));
+        gifs.add(new Gif(1L,"android-explosion.gif",1L, true));
+        gifs.add(new Gif(2L,"ben-and-mike.gif",1L, false));
+        gifs.add(new Gif(3L,"book-dominos.gif",2L, false));
+        gifs.add(new Gif(4L,"compiler-bot.gif",2L, true));
+        gifs.add(new Gif(5L,"cowboy-coder.gif",3L, true));
+        gifs.add(new Gif(6L,"infinite-andrew.gif",3L, false));
         return gifs;
     }
 }

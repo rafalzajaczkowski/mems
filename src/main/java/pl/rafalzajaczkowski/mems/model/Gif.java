@@ -10,6 +10,13 @@ public class Gif {
 
     private boolean isFavourite;
 
+    public boolean isFavourite() {
+        return isFavourite;
+    }
+
+    public void setFavourite(boolean favourite) {
+        isFavourite = favourite;
+    }
 
     public Gif(String userName) {
         this.userName = userName;
@@ -50,9 +57,10 @@ public class Gif {
         return userName;
     }
 
-    public Gif(Long id, String name, Long idCategory){
+    public Gif(Long id, String name, Long idCategory, boolean isFavourite){
         this(id,name);
         this.idCategory = idCategory;
+        this.isFavourite = isFavourite;
     }
 
     public Long getIdCategory() {
