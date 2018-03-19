@@ -38,6 +38,17 @@ public class GifDaoImp implements GifDao {
                 findFirst().get();
     }
 
+
+    public List<Gif> find(String memName) {
+        List<Gif> list = new ArrayList<>();
+        for (Gif g : gifs) {
+            if (g.getName().contains(memName)) {
+                list.add(g);
+            }
+        }
+        return list ;
+    }
+
     public List<Gif> findAll(){
         List<Gif> gifs = new ArrayList<>();
         gifs.add(new Gif(1L,"android-explosion.gif",1L));

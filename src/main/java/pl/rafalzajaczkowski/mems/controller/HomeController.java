@@ -34,6 +34,11 @@ public class HomeController {
 //    public String hrrome(){
 //        return "gif";
 //    }
+    @GetMapping("/home/search")
+    public String search(@RequestParam String name, ModelMap modelMap){
+        modelMap.addAttribute("gifs",gifDao.find(name));
+                return "home";
+    }
 }
 
 

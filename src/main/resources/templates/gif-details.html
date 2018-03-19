@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" th:href="@{/app.css}" />
 
-    <title th:text="'giflib | ' + ${gif.name}">Kwejk</title>
+    <!--<title th:text="'giflib | ' + ${gif.name}">Kwejk</title>-->
 </head>
 <body>
     <div class="navbar-fixed">
@@ -37,7 +37,7 @@
                 <form action="home/search" method="get">
                     <div class="input-field">
                         <input name="q" type="search" placeholder="Search all gifs..." required="required" autocomplete="off"/>
-                        <input th:type="submit" th:value="search">
+                        <!--<input th:type="submit" th:value="search">-->
                         <i class="material-icons">search</i>
                     </div>
                 </form>
