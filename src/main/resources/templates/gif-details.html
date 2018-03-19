@@ -34,9 +34,10 @@
     <div class="search-bar container">
         <div class="row">
             <div class="col s12">
-                <form action="#" method="get">
+                <form action="home/search" method="get">
                     <div class="input-field">
                         <input name="q" type="search" placeholder="Search all gifs..." required="required" autocomplete="off"/>
+                        <input th:type="submit" th:value="search">
                         <i class="material-icons">search</i>
                     </div>
                 </form>
@@ -46,8 +47,8 @@
     <div class="gif-detail container">
         <div class="frame row">
             <div class="col s12">
-                <img th:src="@{'/gifs/' + ${gif.name} + '.gif'}" alt="gif" />
-                <a href="#" th:class="(${gif.favorite} ? 'un' : '') + 'mark favorite'"></a>
+                <img th:src="@{'/gifs/' + ${gif.name}}" alt="gif" />
+                <!--<a href="#" th:class="(${gif.favorite} ? 'un' : '') + 'mark favorite'"></a>-->
             </div>
         </div>
         <div class="row">
@@ -57,7 +58,7 @@
                         <img class="circle" src="http://api.adorable.io/avatars/205/avatar" alt="avatar" />
                     </div>
                     <div class="col s9">
-                        
+                        <p th:text="${gif.getUserName()}"/>
                     </div>
                 </div>
             </div>

@@ -11,6 +11,7 @@ import pl.rafalzajaczkowski.mems.repository.GifDao;
 
 @Controller
 public class HomeController {
+
     @Autowired
 public GifDao gifDao;
 
@@ -20,4 +21,15 @@ public GifDao gifDao;
         return "home";
     }
 
+
+    @GetMapping("/gif/{name}")
+    public String gif(@PathVariable String name, ModelMap modelMap){
+        modelMap.addAttribute("gif",gifDao.findByName(name));
+        return "gif-details";
+   }
+//    @GetMapping("/gif")
+//    public String hrrome(){
+//        return "gif";
+//    }
 }
+
