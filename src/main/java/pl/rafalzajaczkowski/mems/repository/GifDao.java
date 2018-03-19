@@ -7,9 +7,10 @@ import java.util.List;
 
 
 public interface GifDao{
+
+
  List<Gif> findAll();
-
- String findByName(String name);
-
+ String findUserNameByGifName (String memName);
+ Gif findByName(String name);
 }
 
