@@ -24,12 +24,12 @@ public GifDao gifDao;
 
     @GetMapping("/gif/{name}")
     public String gif(@PathVariable String name, ModelMap modelMap){
-        modelMap.addAttribute("names",gifDao.findUserNameByGifName(name));
-        return "gif";
+        modelMap.addAttribute("gif",gifDao.findByName(name));
+        return "gif-details";
    }
 //    @GetMapping("/gif")
 //    public String hrrome(){
 //        return "gif";
 //    }
-
 }
+

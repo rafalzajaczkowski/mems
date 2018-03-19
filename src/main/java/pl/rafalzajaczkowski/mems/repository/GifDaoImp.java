@@ -13,10 +13,13 @@ public class GifDaoImp implements GifDao {
 
     // this block is created before class
     static {
-
+        gifs.add(new Gif(1L, "android-explosion.gif","Adiczek"));
+        gifs.add(new Gif(2L, "ben-and-mike.gif","Dark Lord"));
+        gifs.add(new Gif(3L, "book-dominos.gif","Darth Vader"));
+        gifs.add(new Gif(4L, "compiler-bot.gif","Minionki"));
+        gifs.add(new Gif(5L, "cowboy-coder.gif","Kamil"));
+        gifs.add(new Gif(6L, "infinite-andrew.gif","Marcin_12"));
     }
-
-
 
     @Override
     public String findUserNameByGifName (String memName) {
@@ -26,6 +29,13 @@ public class GifDaoImp implements GifDao {
             }
         }
         return "null";
+    }
+
+    @Override
+    public Gif findByName(String name) {
+        return gifs.stream().filter(gif -> gif.getName()
+                .equals(name)).
+                findFirst().get();
     }
 
     public List<Gif> findAll(){
@@ -38,8 +48,5 @@ public class GifDaoImp implements GifDao {
         gifs.add(new Gif(6L,"infinite-andrew.gif",3L));
         return gifs;
     }
-
-
-
 }
 
