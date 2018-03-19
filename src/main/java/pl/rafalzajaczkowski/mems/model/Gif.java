@@ -3,13 +3,12 @@ package pl.rafalzajaczkowski.mems.model;
 public class Gif {
     private Long id;
     private String name;
-     public String getGifPath(){
-return  "gifs/" +name+".gif";
-     }
+    private String userName;
 
-    public Gif(Long id, String name) {
-        this.id = id;
-        this.name = name;
+
+
+    public String getGifPath() {
+        return "gifs/" + name;
     }
 
     public Long getId() {
@@ -26,5 +25,15 @@ return  "gifs/" +name+".gif";
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Gif(Long id, String name, String userName) {
+        this.id = id;
+        this.name = name;
+        this.userName = userName;
+    }
+
+    public String getUserName() {
+        return userName;
     }
 }
