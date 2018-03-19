@@ -3,6 +3,8 @@ package pl.rafalzajaczkowski.mems.model;
 public class Gif {
     private Long id;
     private String name;
+    private Long idCategory;
+
 
     public String getGifPath(){
 return  "gifs/" +name;
@@ -24,8 +26,23 @@ return  "gifs/" +name;
         this.name = name;
     }
 
+
+
     public Gif(Long id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public Gif(Long id, String name, Long idCategory){
+        this(id,name);
+        this.idCategory = idCategory;
+    }
+
+    public Long getIdCategory() {
+        return idCategory;
+    }
+
+    public void setIdCategory(Long idCategory) {
+        this.idCategory = idCategory;
     }
 }
