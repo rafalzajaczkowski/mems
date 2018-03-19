@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface GifDao{
  List<Gif> findAll();
+
  String findByName(String name);
+
 }
 

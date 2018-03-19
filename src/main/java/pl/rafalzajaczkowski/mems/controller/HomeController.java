@@ -7,9 +7,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.RequestParam;
 import pl.rafalzajaczkowski.mems.model.Gif;
 import pl.rafalzajaczkowski.mems.repository.GifDao;
 
@@ -24,16 +22,17 @@ public class HomeController {
         modelMap.put("gifs", gifDao.findAll());
         return "home";
     }
-//@PostMapping("/gif/{name}")
-//    public String search(@PathVariable String name, ModelMap modelMap){
-//    try {
-//        Gif gif = gifDao.findByName();
-//        modelMap.put("product",product);
-//    } catch (ProductNotFoundException e) {
-//        modelMap.put("message","Nie znaleziono produktu");
-//    }
-//
-//}
+@GetMapping("/gif/{name}")
+    public String gif(@PathVariable String name, ModelMap modelMap) {
+    modelMap.addAttribute("name", gifDao.findByName(name));
+    return "gif-details";
+    }
+
+    @GetMapping("/home/search}")
+    public String search(@RequestParam String name, ModelMap modelMap) {
+    modelMap.addAttribute("name", gifDao.findByName(name));
+    return "redirect:/gif"+gif.get;
+    }
 }
 
 

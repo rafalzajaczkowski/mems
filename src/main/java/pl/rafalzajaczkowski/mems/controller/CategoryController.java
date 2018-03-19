@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import pl.rafalzajaczkowski.mems.repository.CategoryRepository;
 
 @Controller
@@ -17,6 +18,8 @@ public class CategoryController {
     public String findAll(ModelMap map) {
         map.put("categories", categoryRepository.findAll());
         return "categories";
-    }
 
+
+
+    }
 }
