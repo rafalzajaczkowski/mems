@@ -3,7 +3,7 @@ package pl.rafalzajaczkowski.mems.model;
 public class Gif {
     private Long id;
     private String name;
-     public String getGifPatch(){
+     public String getGifPath(){
 return  "gifs/" +name+".gif";
      }
 

@@ -5,16 +5,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import pl.rafalzajaczkowski.mems.repository.GifDao;
 
 
 @Controller
 public class HomeController {
     @Autowired
-public class GifDao ;
+public GifDao gifDao;
 
     @GetMapping("/")
     public String home(ModelMap modelMap){
-        modelMap.put("gifs",gifDa)
+        modelMap.put("gifs",gifDao.findAll());
         return "home";
     }
 }
