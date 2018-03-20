@@ -45,6 +45,8 @@
         </div>
     </div>
     <div class="gifs container">
+        <p th:text="${message}"/>
+
         <div class="row">
             <tr th:each="gif: ${gifs}">
                 <a th:href="@{'/gif/' + ${gif.name}}" >

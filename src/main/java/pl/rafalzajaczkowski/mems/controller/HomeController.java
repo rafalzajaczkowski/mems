@@ -36,8 +36,11 @@ public class HomeController {
 //    }
     @GetMapping("/home/search")
     public String search(@RequestParam String name, ModelMap modelMap){
+        if (gifDao.find(name).size()==0)
+            modelMap.addAttribute("message","Nie ma takiego gifa");
+        else
         modelMap.addAttribute("gifs",gifDao.find(name));
-                return "home";
+        return "home";
     }
 }
 
