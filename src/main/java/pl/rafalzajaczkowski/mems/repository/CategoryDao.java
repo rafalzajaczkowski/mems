@@ -1,7 +1,5 @@
 package pl.rafalzajaczkowski.mems.repository;
 
-
-
 import org.springframework.stereotype.Component;
 import pl.rafalzajaczkowski.mems.model.Category;
 
@@ -21,5 +19,4 @@ public class CategoryDao implements CategoryRepository {
         categories.add(new Category(3, "Programming"));
         return categories;
     }
-
-}
+ }
