@@ -5,6 +5,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import pl.rafalzajaczkowski.mems.model.Category;
 import pl.rafalzajaczkowski.mems.repository.CategoryDao;
 import pl.rafalzajaczkowski.mems.repository.CategoryRepository;
 import pl.rafalzajaczkowski.mems.repository.GifDao;
@@ -33,8 +34,10 @@ public class CategoryController {
     private CategoryDao categoryDao = new CategoryDao();
 
     @GetMapping("/category/{name}")
-    public String gif(@PathVariable Long id, ModelMap modelMap) {
-        modelMap.addAttribute("gifs", gifDao.findByCategory(id));
+    public String gif(@PathVariable String name, ModelMap modelMap) {
+        Category category = categoryRepository.findByName(name);
+        modelMap.addAttribute("category",category);
+        modelMap.addAttribute("gifs", gifDao.findByCategory((long)category.getId()));
         return "category";
     }
 }

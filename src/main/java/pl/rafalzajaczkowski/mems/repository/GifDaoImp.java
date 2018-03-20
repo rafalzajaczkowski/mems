@@ -13,12 +13,12 @@ public class GifDaoImp implements GifDao {
 
     // this block is created before class
     static {
-        gifs.add(new Gif(1L, "android-explosion.gif","Adiczek"));
-        gifs.add(new Gif(2L, "ben-and-mike.gif","Dark Lord"));
-        gifs.add(new Gif(3L, "book-dominos.gif","Darth Vader"));
-        gifs.add(new Gif(4L, "compiler-bot.gif","Minionki"));
-        gifs.add(new Gif(5L, "cowboy-coder.gif","Kamil"));
-        gifs.add(new Gif(6L, "infinite-andrew.gif","Marcin_12"));
+        gifs.add(new Gif(1L,"android-explosion.gif",1L, true));
+        gifs.add(new Gif(2L,"ben-and-mike.gif",1L, false));
+        gifs.add(new Gif(3L,"book-dominos.gif",2L, false));
+        gifs.add(new Gif(4L,"compiler-bot.gif",2L, true));
+        gifs.add(new Gif(5L,"cowboy-coder.gif",3L, true));
+        gifs.add(new Gif(6L,"infinite-andrew.gif",3L, false));
     }
 
     @Override
@@ -50,20 +50,13 @@ public class GifDaoImp implements GifDao {
     }
 
     public List<Gif> findAll(){
-        List<Gif> gifs = new ArrayList<>();
-        gifs.add(new Gif(1L,"android-explosion.gif",1L, true));
-        gifs.add(new Gif(2L,"ben-and-mike.gif",1L, false));
-        gifs.add(new Gif(3L,"book-dominos.gif",2L, false));
-        gifs.add(new Gif(4L,"compiler-bot.gif",2L, true));
-        gifs.add(new Gif(5L,"cowboy-coder.gif",3L, true));
-        gifs.add(new Gif(6L,"infinite-andrew.gif",3L, false));
         return gifs;
     }
 
     @Override
     public List <Gif> findByCategory(Long id) {
         List<Gif> list = new ArrayList<>();
-        for (Gif g : list) {
+        for (Gif g : gifs) {
             if (g.getIdCategory()==id) {
                 list.add(g);
             }

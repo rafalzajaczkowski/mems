@@ -11,15 +11,27 @@ import java.util.List;
 public class CategoryDao implements CategoryRepository {
 
     public CategoryDao(){}
-    private static List<Gif> categories  = new ArrayList<>();
+    private static List<Category> categories  = new ArrayList<>();
 
-    @Override
-    public List<Category> findAll(){
-        List<Category> categories = new ArrayList<>();
+    static {
         categories.add(new Category(1,"Android"));
         categories.add(new Category(2,"Funny"));
         categories.add(new Category(3, "Programming"));
+    }
+
+
+    @Override
+    public List<Category> findAll(){
         return categories;
     }
 
- }
+    @Override
+    public Category findByName(String name) {
+        for ( Category category: categories){
+            if ( category.getName().equals(name)){
+                return category;
+            }
+        }
+        return null;
+    }
+}
