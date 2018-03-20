@@ -45,11 +45,12 @@
     </div>
     <div class="gifs container">
         <div class="row">
-            <tr th:each="gif: ${gifs}">
-                <a th:href="@{'/gif/' + ${gif.name}}" >
-                    <img class="col sl2 l4" th:src="${gif.getGifPath()}"/>
+            <div th:each="gif : ${gifs}" class="col s12 l4">
+                <a th:href="@{|/gif/${gif.name}|}">
+                    <img th:src="${gif.getGifPath()}"/>
+                    <a href="#" th:class="(${gif.favourite}? 'un' : '') + 'mark favorite'"></a>
                 </a>
-            </tr>
+            </div>
         </div>
     </div>
 
