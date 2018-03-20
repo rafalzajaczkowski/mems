@@ -11,9 +11,8 @@ public interface GifDao {
  String findUserNameByGifName(String memName);
 
  Gif findByName(String name);
-
  List<Gif> find(String memName);
  List<Gif> findByCategory(Long id);
-
+ List<Gif> findByCategoryName(String name);
 }
 

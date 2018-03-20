@@ -6,12 +6,14 @@ import pl.rafalzajaczkowski.mems.model.Gif;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @Component
 public class CategoryDao implements CategoryRepository {
 
-    public CategoryDao(){}
-    private static List<Category> categories  = new ArrayList<>();
+    private static List<Category> categories = new ArrayList<>();
+
 
     static {
         categories.add(new Category(1,"Android"));
@@ -20,18 +22,25 @@ public class CategoryDao implements CategoryRepository {
     }
 
 
+    public CategoryDao(){}
+
+
     @Override
     public List<Category> findAll(){
         return categories;
     }
 
     @Override
+
     public Category findByName(String name) {
-        for ( Category category: categories){
-            if ( category.getName().equals(name)){
+        for (Category category : categories) {
+            if (category.getName().equals(name)) {
                 return category;
             }
         }
         return null;
+    }
+    public Category findByCategory(String name) {
+        return categories.stream().filter(c->c.getName()== name).collect(Collectors.toList()).get(0);
     }
 }
