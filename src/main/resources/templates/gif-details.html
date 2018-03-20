@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" th:href="@{/app.css}" />
 
-    <title th:text="'giflib | ' + ${gif.name}">Kwejk</title>
+    <!--<title th:text="'giflib | ' + ${gif.name}">Kwejk</title>-->
 </head>
 <body>
     <div class="navbar-fixed">
@@ -37,17 +37,20 @@
                 <form action="home/search" method="get">
                     <div class="input-field">
                         <input name="q" type="search" placeholder="Search all gifs..." required="required" autocomplete="off"/>
-                        <input th:type="submit" th:value="search">
-                        <i class="material-icons">search</i>
+                        <!--<input th:type="submit" th:value="search">-->
+                        <!--<i class="material-icons">search</i>-->
                     </div>
                 </form>
             </div>
         </div>
     </div>
     <div class="gif-detail container">
+
         <div class="frame row">
             <div class="col s12">
                 <img th:src="@{'/gifs/' + ${gif.name}}" alt="gif" />
+
+
                 <!--<a href="#" th:class="(${gif.favorite} ? 'un' : '') + 'mark favorite'"></a>-->
             </div>
         </div>
@@ -59,6 +62,7 @@
                     </div>
                     <div class="col s9">
                         <p th:text="${gif.getUserName()}"/>
+
                     </div>
                 </div>
             </div>
