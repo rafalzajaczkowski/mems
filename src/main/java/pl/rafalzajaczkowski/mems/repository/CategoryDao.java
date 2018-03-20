@@ -30,6 +30,11 @@ public class CategoryDao implements CategoryRepository {
         return categories;
     }
 
+    @Override
+    public Category findByName(String name) {
+        return null;
+    }
+
 
     public Category findByCategory(String name) {
         return categories.stream().filter(c->c.getName().equals( name)).collect(Collectors.toList()).get(0);
