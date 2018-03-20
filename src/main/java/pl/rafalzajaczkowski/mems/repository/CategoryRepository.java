@@ -8,5 +8,5 @@ import java.util.List;
 public interface CategoryRepository {
 
     List<Category> findAll();
-
+    Category findById(Long id);
 }
