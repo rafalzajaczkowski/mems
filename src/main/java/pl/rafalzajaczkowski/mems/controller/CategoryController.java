@@ -4,15 +4,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import pl.rafalzajaczkowski.mems.repository.CategoryDao;
 import pl.rafalzajaczkowski.mems.repository.CategoryRepository;
-
+import pl.rafalzajaczkowski.mems.repository.GifDao;
 
 @Controller
 public class CategoryController {
 
     @Autowired
     private CategoryRepository categoryRepository;
+    @Autowired
+    public GifDao gifDao;
+
 
     @GetMapping("/categories")
     public String findAll(ModelMap map) {
@@ -29,7 +33,8 @@ public class CategoryController {
     private CategoryDao categoryDao = new CategoryDao();
 
     @GetMapping("/category/{name}")
-    public String show(@PathVariable String name){
+    public String gif(@PathVariable Long id, ModelMap modelMap) {
+        modelMap.addAttribute("gifs", gifDao.findByCategory(id));
         return "category";
     }
 }

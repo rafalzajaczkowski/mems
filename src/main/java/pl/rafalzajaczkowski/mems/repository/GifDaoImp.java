@@ -59,4 +59,15 @@ public class GifDaoImp implements GifDao {
         gifs.add(new Gif(6L,"infinite-andrew.gif",3L, false));
         return gifs;
     }
+
+    @Override
+    public List <Gif> findByCategory(Long id) {
+        List<Gif> list = new ArrayList<>();
+        for (Gif g : list) {
+            if (g.getIdCategory()==id) {
+                list.add(g);
+            }
+        }
+        return list;
+    }
 }
