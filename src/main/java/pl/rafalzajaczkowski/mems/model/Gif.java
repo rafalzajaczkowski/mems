@@ -24,7 +24,7 @@ public class Gif {
 
 
     public String getGifPath() {
-        return "gifs/" + name;
+        return "/gifs/" + name;
     }
 
     public Long getId() {
@@ -51,6 +51,12 @@ public class Gif {
 
         this.id = id;
         this.name = name;
+    }
+
+
+    @Override
+    public String toString() {
+        return getGifPath();
     }
 
     public String getUserName() {
