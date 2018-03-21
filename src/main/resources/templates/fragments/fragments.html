@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+<div id="wrapper">
 <div th:fragment="menu" >
     <div class="navbar-fixed">
         <nav>
@@ -25,15 +26,18 @@
         </nav>
     </div>
 </div>
-<div th:fragment="footer" >
-    <div class="navbar-fixed">
-        <nav>
-            <div class="container">
-                <a th:href="@{/}" class="brand-logo">gif<span>.</span>lib</a>
-                <a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
-            </div>
-        </nav>
-    </div>
 </div>
+<footer>
+    <div th:fragment="footer">
+        <div class="footer">
+            <nav>
+                <div class="footer">
+                    <a th:href="@{/}" class="brand-logo">gif<span>.</span>lib</a>
+                    <a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
