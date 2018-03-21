@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" th:href="@{/app.css}" />
 
+    <!--/*@thymesVar id="name" type=""*/-->
     <title th:text="'giflib | ' + ${category.name}">Category</title>
 </head>
 <body>
@@ -27,12 +28,21 @@
         </div>
     </div>
 </div>
+
 <div class="gifs container">
     <div class="chip" th:text="${category.name}">category name</div>
     <div class="row">
-        <h1>Miejsce na wyświetlenie gifów</h1>
+        <tr th:each="gif: ${gifs}">
+            <a th:href="@{'/category/' + ${gif.id}}">
+                <img class="col s12 l4" th:src="${gif.getGifPath()}"/>
+            </a>
+        </tr>
     </div>
 </div>
+
+
+
+
 
 <script th:src="@{/vendor/jquery/jquery-1.11.3.js}"></script>
 <script th:src="@{/vendor/materialize/js/materialize.js}"></script>
