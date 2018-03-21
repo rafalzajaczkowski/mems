@@ -13,6 +13,7 @@
     <title>giflib | Home</title>
 </head>
 <body>
+<div id="wrapper">
 <div th:include="fragments/fragments :: menu"></div>
 
     <div class="search-bar container">
@@ -43,5 +44,7 @@
 <script th:src="@{/vendor/jquery/jquery-1.11.3.js}"></script>
 <script th:src="@{/vendor/materialize/js/materialize.js}"></script>
 <script th:src="@{/app.js}"></script>
+</div>
 </body>
+<div th:include="fragments/fragments :: footer"></div>
 </html>

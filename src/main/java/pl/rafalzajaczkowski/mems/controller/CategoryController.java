@@ -35,7 +35,7 @@ public class CategoryController {
 
     @GetMapping("/category/{name}")
     public String gif(@PathVariable String name, ModelMap modelMap) {
-        Category category = categoryRepository.findByName(name);
+        Category category = categoryRepository.findByCategory(name);
         modelMap.addAttribute("category",category);
         modelMap.addAttribute("gifs", gifDao.findByCategory((long)category.getId()));
         return "category";

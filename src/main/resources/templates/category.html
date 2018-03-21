@@ -3,19 +3,15 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
     <link rel="icon" th:href="@{/favicon.png}" />
-
     <link rel="stylesheet" th:href="@{/vendor/materialize/css/materialize.css}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" th:href="@{/app.css}" />
-
-    <!--/*@thymesVar id="name" type=""*/-->
     <title th:text="'giflib | ' + ${category.name}">Category</title>
 </head>
 <body>
+<div id="wrapper">
 <div th:include="fragments/fragments :: menu"></div>
-
 <div class="search-bar container">
     <div class="row">
         <div class="col s12">
@@ -28,7 +24,6 @@
         </div>
     </div>
 </div>
-
 <div class="gifs container">
     <div class="chip" th:text="${category.name}">category name</div>
     <div class="row">
@@ -39,13 +34,10 @@
         </tr>
     </div>
 </div>
-
-
-
-
-
 <script th:src="@{/vendor/jquery/jquery-1.11.3.js}"></script>
 <script th:src="@{/vendor/materialize/js/materialize.js}"></script>
 <script th:src="@{/app.js}"></script>
+</div>
+<div th:include="fragments/fragments :: footer"></div>
 </body>
 </html>
